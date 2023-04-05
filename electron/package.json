@@ -1,0 +1,14 @@
+{
+  "name": "serial-kiosk",
+  "version": "0.1.0",
+  "private": true,
+  "main": "main.js",
+  "dependencies": {
+    "electron": "^23.2.1",
+    "electron-packager": "^17.1.1"
+  },
+  "scripts": {
+    "start": " electron .",
+    "package": "electron-packager . --overwrite --output=release-build --prune=true"
+  }
+}
