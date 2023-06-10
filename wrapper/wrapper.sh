@@ -1,6 +1,7 @@
 #! /bin/sh
 
 export SNAP_URL="$(snapctl get url)"
+export SNAP_PORT="$(snapctl get port)"
 
 if cat /proc/cpuinfo | grep -q "Pi 4"; then
   EXTRAOPTS="--disable-gpu"
