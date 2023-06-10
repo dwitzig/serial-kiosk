@@ -28,8 +28,8 @@ compression: lzo
 
 architectures:
   - build-on: amd64
-  - build-on: armhf
-  - build-on: arm64
+  # - build-on: armhf
+  # - build-on: arm64
 
 apps:
   serial-kiosk:
@@ -79,7 +79,7 @@ parts:
         export GLOBAL_AGENT_HTTPS_PROXY="${http_proxy}"
       fi
 
-      npm install --unsafe-perm true electron-packager
+      npm install --unsafe-perm true electron-packager dotenv
       cp $SNAPCRAFT_PROJECT_DIR/electron/main.js .
       electron-packager . --overwrite --platform=linux \
           --output=release-build --prune=true
