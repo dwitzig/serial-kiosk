@@ -1,5 +1,5 @@
 name: serial-kiosk
-version: "0.4.0"
+version: "0.4.1"
 summary: Electron based kiosk browser with serial port connection
 description: |
   A simple Electron Kiosk app that acts as a fullscreen browser
