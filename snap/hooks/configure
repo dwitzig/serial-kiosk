@@ -1,5 +1,6 @@
 #! /bin/sh
 
-[ -n "$(snapctl get url)" ] || snapctl set url="https://www.electronjs.org/"
+[ -n "$(snapctl get url)" ] || snapctl set url="https://www.electronjs.org/" || [ -n "$(snapctl get device_id)" ] || snapctl set device_id="https://www.electronjs.org/"
 
+export DEVICE_ID="$(hostname)"
 snapctl restart $SNAP_NAME
