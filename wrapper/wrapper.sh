@@ -10,7 +10,7 @@ if cat /proc/cpuinfo | grep -q "Pi 4"; then
   EXTRAOPTS="--disable-gpu"
 fi
 
-exec DEVICE_ID="$(hostname)" $SNAP/electron-helloworld/electron-quick-start \
+exec $SNAP/electron-helloworld/electron-quick-start \
 	--enable-features=UseOzonePlatform \
 	--ozone-platform=wayland \
 	--disable-dev-shm-usage \
