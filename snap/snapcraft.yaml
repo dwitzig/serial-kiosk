@@ -38,6 +38,7 @@ apps:
     extensions: [gnome-3-38]
     environment:
       GTK_USE_PORTAL: 0
+      DEVICE_ID: dev0001
     command: usr/bin/wrapper
     command-chain:
       - bin/dbus-launch
