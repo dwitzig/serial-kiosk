@@ -82,6 +82,7 @@ parts:
 
       npm install --unsafe-perm true electron-packager dotenv
       cp $SNAPCRAFT_PROJECT_DIR/electron/main.js .
+      cp $SNAPCRAFT_PROJECT_DIR/electron/preload.js .
       electron-packager . --overwrite --platform=linux \
           --output=release-build --prune=true
       ls     
