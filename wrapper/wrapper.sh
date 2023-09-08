@@ -3,6 +3,7 @@
 export SNAP_URL="$(snapctl get url)"
 # export DEVICE_ID="$(snapctl get device_id)"
 export DEVICE_ID="$(hostname)"
+export TZ=$(cat /etc/timezone)
 
 echo "DEVICE = $DEVICE_ID"
 
