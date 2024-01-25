@@ -54,6 +54,7 @@ apps:
       - wayland
       - serial-port
       - raw-usb
+      - camera
 
 # Needed by Mir and/or Wayland
 layout:
