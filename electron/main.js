@@ -120,8 +120,8 @@ function createWindow() {
 
   // and load the index.html of the app.
   // console.log(process.env);
-  mainWindow.loadURL("https://192.168.1.36:3000/input");
-  // mainWindow.loadURL(process.env["SNAP_URL"]);
+  // mainWindow.loadURL("http://rp01.ni.revolveyourworld.net");
+  mainWindow.loadURL(process.env["SNAP_URL"]);
   // mainWindow.setFullScreen(true);
 
   // Open the DevTools.
