@@ -67,6 +67,39 @@ function createWindow() {
     }
   );
 
+  mainWindow.webContents.session.on(
+    "select-usb-device",
+    (event, details, callback) => {
+      // Add events to handle devices being added or removed before the callback on
+      // `select-usb-device` is called.
+      mainWindow.webContents.session.on("usb-device-added", (event, device) => {
+        console.log("usb-device-added FIRED WITH", device);
+        // Optionally update details.deviceList
+      });
+
+      mainWindow.webContents.session.on(
+        "usb-device-removed",
+        (event, device) => {
+          console.log("usb-device-removed FIRED WITH", device);
+          // Optionally update details.deviceList
+        }
+      );
+
+      event.preventDefault();
+      if (details.deviceList && details.deviceList.length > 0) {
+        // const deviceToReturn = details.deviceList.find((device) => {
+        //   return !grantedDeviceThroughPermHandler || (device.deviceId !== grantedDeviceThroughPermHandler.deviceId)
+        // })
+        // if (deviceToReturn) {
+        //   callback(deviceToReturn.deviceId)
+
+        callback(details.deviceList[0].deviceId);
+      } else {
+        callback();
+      }
+    }
+  );
+
   mainWindow.webContents.session.setPermissionCheckHandler(
     (webContents, permission, requestingOrigin, details) => {
       // if (permission === "serial") {
@@ -87,8 +120,8 @@ function createWindow() {
 
   // and load the index.html of the app.
   // console.log(process.env);
-  // mainWindow.loadURL("http://192.168.136/ws");
-  mainWindow.loadURL(process.env["SNAP_URL"]);
+  mainWindow.loadURL("https://192.168.1.36:3000/input");
+  // mainWindow.loadURL(process.env["SNAP_URL"]);
   // mainWindow.setFullScreen(true);
 
   // Open the DevTools.
