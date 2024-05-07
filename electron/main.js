@@ -73,14 +73,14 @@ function createWindow() {
       // Add events to handle devices being added or removed before the callback on
       // `select-usb-device` is called.
       mainWindow.webContents.session.on("usb-device-added", (event, device) => {
-        console.log("usb-device-added FIRED WITH", device);
+        console.log("usb-device-added FIRED WITH", device, details);
         // Optionally update details.deviceList
       });
 
       mainWindow.webContents.session.on(
         "usb-device-removed",
         (event, device) => {
-          console.log("usb-device-removed FIRED WITH", device);
+          console.log("usb-device-removed FIRED WITH", details);
           // Optionally update details.deviceList
         }
       );
@@ -92,11 +92,7 @@ function createWindow() {
         // })
         // if (deviceToReturn) {
         //   callback(deviceToReturn.deviceId)
-        console.log(
-          "select-usb-device CONNECT",
-          details.deviceList[0],
-          details.deviceList[0].deviceId
-        );
+        console.log("select-usb-device CONNECT", details.deviceList);
         callback(details.deviceList[0].deviceId);
       } else {
         callback();
