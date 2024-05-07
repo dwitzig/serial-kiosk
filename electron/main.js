@@ -118,6 +118,10 @@ function createWindow() {
     return true;
   });
 
+  mainWindow.webContents.session.setUSBProtectedClassesHandler((details) => {
+    return [];
+  });
+
   // and load the index.html of the app.
   // console.log(process.env);
   // mainWindow.loadURL("http://rp01.ni.revolveyourworld.net");
