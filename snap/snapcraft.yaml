@@ -55,6 +55,8 @@ apps:
       - serial-port
       - raw-usb
       - camera
+      - cups
+      - cups-control
 
 # Needed by Mir and/or Wayland
 layout:
@@ -93,7 +95,7 @@ parts:
       - libnss3
       - udev
     build-snaps:
-      - node/16/stable
+      - node/18/stable
   dbus-launch:
     plugin: dump
     source: dbus
