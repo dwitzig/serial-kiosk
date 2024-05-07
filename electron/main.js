@@ -92,7 +92,11 @@ function createWindow() {
         // })
         // if (deviceToReturn) {
         //   callback(deviceToReturn.deviceId)
-
+        console.log(
+          "select-usb-device CONNECT",
+          details.deviceList[0],
+          details.deviceList[0].deviceId
+        );
         callback(details.deviceList[0].deviceId);
       } else {
         callback();
