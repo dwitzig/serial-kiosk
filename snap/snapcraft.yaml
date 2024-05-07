@@ -55,8 +55,6 @@ apps:
       - serial-port
       - raw-usb
       - camera
-      - cups
-      - cups-control
 
 # Needed by Mir and/or Wayland
 layout:
